@@ -10,17 +10,130 @@
 		<meta charset="utf-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
 		<link rel="stylesheet" href="assets/css/main.css" />
+		<style>
+
+    /* Hamburger Symbol */
+    .hamburger {
+      position: fixed;
+      top: 20px;
+      right: 20px;
+      width: 30px;
+      height: 25px;
+	  color:white;
+      cursor: pointer;
+      z-index: 1001;
+    }
+
+    .hamburger div {
+      background-color: #333;
+      height: 4px;
+      margin: 5px 0;
+      transition: 0.4s;
+    }
+
+    /* Seitenmenü */
+    .side-menu {
+      position: fixed;
+      top: 0;
+      right: -250px;
+      width: 250px;
+      height: 100%;
+      background-color: #222;
+      color: white;
+      padding-top: 60px;
+      transition: right 0.6s ease; /* <--- hier langsamer gemacht */
+      z-index: 1000;
+    }
+
+    .side-menu.open {
+      right: 0;
+    }
+
+    .side-menu a {
+      display: block;
+      padding: 15px 20px;
+      color: white;
+      text-decoration: none;
+    }
+
+    .side-menu a:hover {
+      background-color: #444;
+    }
+	
+	.slider {
+	  left: 10%;
+      position: relative;
+      width: 80%;
+      height: 20%;
+      overflow: hidden;
+    }
+
+    .slider img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: none;
+    }
+
+    .slider img.active {
+      display: block;
+    }
+
+    .arrow {
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      font-size: 2.5rem;
+      color: white;
+      background-color: rgba(0, 0, 0, 0.4);
+      padding: 10px;
+      cursor: pointer;
+      z-index: 1;
+      user-select: none;
+    }
+
+    .arrow.left {
+      left: 10px;
+    }
+
+    .arrow.right {
+      right: 10px;
+    }
+  </style>
 	</head>
 	<body class="is-preload">
-
-		<!-- Header -->
-			<div id="header">
-				<span class="logo icon fa-paper-plane"></span>
-				<h1>Hi. This is Directive.</h1>
-				<p>A responsive HTML5 + CSS3 site template designed by <a href="http://html5up.net">HTML5 UP</a>
-				<br />
-				and released for free under the <a href="http://html5up.net/license">Creative Commons license</a>.</p>
+			<div id = "firstP" style= "height:100%; display: flex;">
+				<div style="left:0%; top:0%;width: 50%;height:100%; z-index: 99; background-color:#252525;" /></div>
+				<div style="position: absolute; left:2.5%; top:5%; z-index: 99;"> Unity Performance</div>
+				<div style="position: absolute; left:5%; top:40%; z-index: 99;font-size:200%;">
+					Dedicated to exellence
+				</div>
+				<a href="#probetraining" style="border-radius:1vw;background-color: #f9f7f3;color:#252525;
+				position: absolute; left:5%; top:45%; z-index: 99;font-size:100%; padding: 0.4%;">Probetraining</a>
+				<img src = "images/unity.jpg" style="position: absolute;z-index: 99; left:40%; top: 10%; width:20%; height: 20%;">
+				<div class="slider" style="width:50%; height:100%;left:0%;top:0%;">
+				  <div class="arrow left" onclick="prevImage()">❮</div>
+				  <div class="arrow right" onclick="nextImage()">❯</div>
+				  <img src="images/pic02.jpg" class="active">
+				  <img src="images/pic03.jpg">
+				</div>
 			</div>
+			
+		
+			<div class="hamburger" onclick="toggleMenu()">
+			  <div style= "background-color: white;"></div>
+			  <div style= "background-color: white;"></div>
+			  <div style= "background-color: white;"></div>
+			</div>
+			
+			<div class="side-menu" id="sideMenu">
+			  <a href="#">Startseite</a>
+			  <a href="#">Über uns</a>
+			  <a href="#">Leistungen</a>
+			  <a href="#">Kontakt</a>
+			</div>
+			
+
 
 		<!-- Main -->
 			<div id="main">
@@ -36,12 +149,36 @@
 					etiam vivamus nunc nibh morbi.</p>
 					-->
 				</header>
+				
+							<script>
+  const images = document.querySelectorAll('.slider img');
+  let current = 0;
 
+  function showImage(index) {
+    images.forEach((img, i) => {
+      img.classList.toggle('active', i === index);
+    });
+  }
+
+  function nextImage() {
+    current = (current + 1) % images.length;
+    showImage(current);
+  }
+
+  function prevImage() {
+    current = (current - 1 + images.length) % images.length;
+    showImage(current);
+  }
+  function toggleMenu() {
+    document.getElementById("sideMenu").classList.toggle("open");
+  }
+</script>
+				
 				<div class="box alt container">
 					<section class="feature left">
 						<a href="#" class="image icon solid fa-signal"><img src="images/pic01.jpg" alt="" /></a>
 						<div class="content">
-							<h3>The First Thing</h3>
+							<h3 id= "probetraining">The First Thing</h3>
 							<p>Vitae natoque dictum etiam semper magnis enim feugiat amet curabitur tempor orci penatibus. Tellus erat mauris ipsum fermentum etiam vivamus eget. Nunc nibh morbi quis fusce lacus.</p>
 						</div>
 					</section>

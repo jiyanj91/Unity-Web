@@ -1,0 +1,15 @@
+- Bei den Bildern wäre es toll, wenn nicht nur ein Bild platziert werden könnte,
+    sondern ein seitliches scrollen möglich wäre, um mehr grafisches Material einbinden zu können)
+
+
+- transparenz logo
+- zusätzlich bräuchte es ein floating Element (ein fixiertes overlay) das den
+    launchtermin permanent sichtbar platziert und in dem man eine
+    kontaktmöglichkeit zur Anfrage für Probetrainings anbietet
+    (mind. Link einer  Mailadresse oder ggf. Link für ein kontaktformular)
+
+
+
+
+
+
