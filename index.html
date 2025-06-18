@@ -6,7 +6,7 @@
 -->
 <html>
 	<head>
-		<title>Directive by HTML5 UP</title>
+		<title>Unity Performance</title>
 		<meta charset="utf-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
 		<link rel="stylesheet" href="assets/css/main.css" />
@@ -63,9 +63,9 @@
 	.slider {
 	  left: 10%;
       position: relative;
-      width: 80%;
       height: 20%;
       overflow: hidden;
+	  width:50%; height:100%;left:0%;top:0%;
     }
 
     .slider img {
@@ -85,7 +85,7 @@
       transform: translateY(-50%);
       font-size: 2.5rem;
       color: white;
-      background-color: rgba(0, 0, 0, 0.4);
+      background-color: rgba(0, 0, 0, 0.0);
       padding: 10px;
       cursor: pointer;
       z-index: 1;
@@ -102,20 +102,27 @@
     html{
     font-size: clamp(14px, 1.2vw, 18px);
     }
+	
+	.first-left{ left:0%; top:0%;width: 50%;height:100%; z-index: 99; background-color:#252525;}
+	
+	@media screen and (max-width: 540px) {
+		.first-left{ display:none;}
+		.slider {width:100%;}
+	}
   </style>
 	</head>
 	<body class="is-preload">
 			<div id = "firstP" style= "height:100%; display: flex;">
-				<div style="left:0%; top:0%;width: 50%;height:100%; z-index: 99; background-color:#252525;" /></div>
-				<div style="position: absolute; left:2.5%; top:5%; z-index: 99; font-size:1rem;"> Unity Performance</div>
-				<div style="position: absolute; left:5%; top:40%; width:40%; z-index: 99; font-size: 2rem;">
+				<div class="first-left" /></div>
+				<div style="position: absolute; left:1.5%; top:2%; z-index: 99; font-size:2rem;"> Unity Performance</div>
+				<div style="position: absolute; left:5%; top:50%; width:40%; z-index: 99; font-size: 2.5rem;">
 					<p style = "margin-bottom: 0.8rem">Dedicated to exellence</p>
                     <a href="#probetraining" style="border-radius:0.0rem;background-color: #d7a13d; color:#f9f7f3;">
                     Probetraining
                     </a>
 				</div>
-				<img src = "images/Logo_Unity_Performance_Vektor.png" style="position: absolute;z-index: 99; left:40%; top: 5%; width:20%;">
-				<div class="slider" style="width:50%; height:100%;left:0%;top:0%;">
+				<img src = "images/Logo_Unity_Performance_Vektor.png" style="position: absolute;z-index: 99; left:40%; top: 15%; width:20%;">
+				<div class="slider">
 				  <div class="arrow left" onclick="prevImage()">❮</div>
 				  <div class="arrow right" onclick="nextImage()">❯</div>
 				  <img src="images/pic02.jpg" class="active">
