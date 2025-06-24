@@ -2080,6 +2080,7 @@ input, select, textarea {
 	input[type="text"],
 	input[type="password"],
 	input[type="email"],
+	input[type="checkbox"],
 	select,
 	textarea {
 		-moz-appearance: none;
@@ -2106,6 +2107,7 @@ input, select, textarea {
 		input[type="text"]:focus,
 		input[type="password"]:focus,
 		input[type="email"]:focus,
+		input[type="checkbox"]:focus,
 		select:focus,
 		textarea:focus {
 			background: rgba(224, 224, 224, 0.15);
@@ -2115,6 +2117,7 @@ input, select, textarea {
 	input[type="text"],
 	input[type="password"],
 	input[type="email"],
+	input[type="checkbox"],
 	select {
 		line-height: 1em;
 	}
@@ -2863,6 +2866,7 @@ input, select, textarea {
 		#footer input[type="text"]:focus,
 		#footer input[type="password"]:focus,
 		#footer input[type="email"]:focus,
+		#footer input[type="checkbox"]:focus,
 		#footer select:focus,
 		#footer textarea:focus {
 			border-color: #ffffff;

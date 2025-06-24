@@ -1,5 +1,7 @@
-
-
+- side menü pixel angaben weg
+- bild bei mobile landing page: nimmt x prozent weg -> proportionen des Bildes passen evbentuel nicht mehr?
+- gradienten
+- PROBETRAING Form, ids und names sind doppelt. Ist das ein Problem?
 
 
 
