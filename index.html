@@ -196,39 +196,59 @@ button:active {
 	display:none;
 }
 
+#impressum {
+	background-color: var(--myBlack);
+	height:70%;
+	position:relative;
+}
+
+#impressum-grid{
+	display: grid;
+	
+	grid-template-columns: auto auto 50%;
+	grid-template-rows: auto 1fr;
+	gap: 1rem;
+	background-color: var(--myBlack);
+	width: 100%;
+	height: 100%;
+}
+
 #impressum-head{
-position: absolute; left:2.5%; top:5%; z-index: 99; font-size:2rem;
-}
-
-.impressum-container {
-  display: grid;
-  grid-template-columns: auto 1fr;
-  grid-template-rows: auto auto auto; /* 3 Zeilen */
-  gap: 0.5rem;
-  position: absolute; left:2.5%; top:5%; font-size:1rem;
-}
-
-.impressum-top {
-}
-
-.impressum-left {
-  grid-row: 1 / 4; /* oder span 3 */
-}
-
-.impressum-right {
-}
-
-.impressum-top {
-	grid-column: 2;
+	font-size: 2rem;
+	grid-column: 1/3;
 	grid-row: 1;
+	margin-left: 5vw;
+	margin-top: 2.5vh;
 }
 
-.impressum-bottom {
+#impressum-place{
+	grid-column: 1;
+	grid-row: 2;
+	margin-left: 5vw;
+}
+
+#impressum-tel{
 	grid-column: 2;
-	grid-row: 3;
+	grid-row: 2;
+}
+
+#impressum-dedicated{
+	font-size:2rem;
+	color: var(--myYellow);
+	grid-column: 3;
+	grid-row: 2;
+}
+
+#impressum-tel-mail{
+	position: relative;
+	top: 1.5rem;
+}
+
+#impressum-imprint{
+	display: none;
 }
 	
-	@media screen and (max-width: 5400px) {
+	@media screen and (max-width: 540px) {
 		#landing{
 			display:none;
 		}
@@ -324,29 +344,62 @@ position: absolute; left:2.5%; top:5%; z-index: 99; font-size:2rem;
 			white-space: normal;
 			width: fit-content;
 		}
+		
+		#impressum {
+			height: auto;
+		}
+		
+		#impressum-grid{
+			grid-template-columns: auto;
+			grid-template-rows: auto auto auto auto auto 10vh auto;
+			gap: 1rem;
+			height:auto;
+			place-items: center;
+		}
+		
 		#impressum-contact{
 			display:block;
 			font-size: 1.5rem;
-			position: absolute;
-			top: 20%;
-			left: 50%;
-			transform: translate(-50%, -50%);
+			//top: 20%;
+			//left: 50%;
+			//transform: translate(-50%, -50%);
 			color: var(--myWhite);
 			text-align: center;
 			white-space: normal;
 			width: fit-content;
+			grid-column: 1;
+			grid-row: 1;
 		}
+		
+		#impressum-tel{
+			grid-column: 1;
+			grid-row: 2;
+		}
+		
+		#impressum-place{
+			grid-column: 1;
+			grid-row: 3;
+			margin: 0%;
+		}
+		
+		#impressum-dedicated{
+			grid-column: 1;
+			grid-row: 4;
+		}
+		
 		#impressum-head{
 			display: none;
 		}
-		.impressum-container {
-			flex-direction: row;
-		}
 
-		.impressum-right {
-			flex-direction: column;
+		#impressum-imprint{
+			font-size: 2rem;
+			display:block;
+			grid-column: 1;
+			grid-row: 6;
 		}
-
+		#impressum-tel-mail{
+			top: initial;
+		}
 	}
   </style>
 	</head>
@@ -471,35 +524,29 @@ position: absolute; left:2.5%; top:5%; z-index: 99; font-size:2rem;
 				
 			</div>
             
-            <div id = "impressum" style= "height:70%; position:relative;">
-				<p id = "impressum-contact">Contact</p>
-				<div style="left:0%; top:0%;width: 100%;height:100%; z-index: 99; background-color:#252525;" /></div>
-				<div id = "impressum-head">Impressum</div>
-                <p style="position: absolute; left:2.5%; top:35%; z-index: 99; font-size:1rem;">
-				Unity Performance <br>
-				Alsterufer 12 <br>
-				20354 Hamburg
-				</p>
-				
-				<div class="impressum-container">
-				  <div class="impressum-left">
-					<p style="font-size:1rem;">
-						Unity Performance <br>
-						Alsterufer 12 <br>
-						20354 Hamburg
+            <div id = "impressum">
+				<div id = "impressum-grid">
+					<p id = "impressum-contact">Contact</p>
+					<div id = "impressum-head">Impressum</div>
+					
+
+					
+					<p id = "impressum-place">
+					Unity Performance <br>
+					Alsterufer 12 <br>
+					20354 Hamburg
 					</p>
-				  </div>
-				  <div class="impressum-right">
-					<div class="impressum-top">&#128222; 040 37482628</div>
-					<div class="impressum-bottom">&#9993; lala@gmail.com</div>
-				  </div>
+					
+					<div id= "impressum-tel">
+						<div id = "impressum-tel-tel">&#128222; 040 37482628</div>
+						<div id = "impressum-tel-mail">&#9993; lala@gmail.com</div>
+					</div>
+					
+					<div id = "impressum-dedicated">Dedicated to excellence</div>
+					<div id = "impressum-imprint">Imprint</div>
 				</div>
-                
-                <div style="position: absolute; left:20.5%; top:35%; z-index: 99; font-size:1rem;">&#128222; 040 37482628</div>
-                <div style="position: absolute; left:20.5%; top:45%; z-index: 99; font-size:1rem;">&#9993; lala@gmail.com</div>
-                
-                <div style="position: absolute; left:60%; top:40%; z-index: 99; font-size:2rem; color: var(--myYellow);">Dedicated to excellence</div>
             </div>
+			
 			
 		
 			<div class="hamburger" onclick="toggleMenu()">
