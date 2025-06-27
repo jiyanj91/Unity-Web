@@ -2,6 +2,7 @@
 - bild bei mobile landing page: nimmt x prozent weg -> proportionen des Bildes passen evbentuel nicht mehr?
 - gradienten
 - PROBETRAING Form, ids und names sind doppelt. Ist das ein Problem?
+- Datenschutz Text
 
 
 
@@ -9,4 +10,9 @@
 
 
 
-
+Datenschutzerklärung & Einwilligung
+Für die Anmeldung zu deinem Probetraining brauchen wir einige persönliche Angaben von dir - zum Beispiel deinen Namen,
+deine Telefonnummer und deine E-Mail-Adresse. Diese Daten verwenden wir ausschließlich, um mit dir Kontakt aufzunehmen, einen
+Termin zu vereinbaren und dein Probetraining zu organisieren.
+Mit dem Absenden des Formulars erklärst du dich damit einverstanden, dass wir deine Daten entsprechend unserer
+Datenschutzerklärung verarbeiten.

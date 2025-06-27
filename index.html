@@ -149,7 +149,7 @@
 	}
 	
 	#mobile-probetraining {
-		height: 100%;
+		height: 40vh;
 		display:none;
 		position: relative;
 	}
@@ -248,13 +248,18 @@ button:active {
 	display: none;
 }
 
+#mobile-probe-willst{
+	font-size:2rem;
+	color:#252525;
+}
+
 #mobile-probe-table-right {
 	display: grid;
 	position: absolute;
 	width: 100%;
 	height: 100%;
 	gap: 0% 5%;
-	grid-template-columns: 1% 2fr 1fr 5%;
+	grid-template-columns: 6% 2fr 1fr 5%;
 	grid-template-rows: 2% auto auto auto auto auto auto auto 2%;
 }
 
@@ -263,6 +268,15 @@ button:active {
 	grid-column: 2;
 	grid-row: 2;
 }
+
+#mobile-probe-logo{
+	position: absolute;
+	left: 45%;
+	top: 30%;
+	width: 10%;
+	z-index: 99;
+}
+
 
 #f1{
 	grid-column: 2;
@@ -283,8 +297,68 @@ button:active {
 	grid-column: 3;
 	grid-row: 8;
 }
+
+#probetraining{
+		display:none;
+}
+
+#mobile-probetraining {
+	display:block;
+}
+
+#mobile-probe-mid {
+			position:relative;
+			background-color: var(--myBlack);
+			height: 40vh;
+		}
+	
+#mobile-probe-table-right{
+	left: 50%;
+	width: 50%;
+}
+
+#mobile-probe-join{
+	position: absolute;
+	left: 0%;
+	top: 0%;
+	width: 50%;
+	height: 40vh;
+	background-color: var(--myWhite);
+}
+
+#mobile-probe-join-head{
+	display: none;
+}
+
+
 	
 	@media screen and (max-width: 540px) {
+	
+	#mobile-probe-logo{
+		position: absolute;
+		left:2.5%;
+		top:2.5%;
+		height:6%; 
+	}
+	
+	
+	#mobile-probe-willst{
+		display: none;
+	}
+	
+	#mobile-probe-join-head{
+		display:block;
+	}
+	
+		#mobile-probe-join{
+	position: initial;
+	left: initial;
+	top: initial;
+	width: initial;
+	height: initial;
+	background-color: initial;
+}
+	
 		#landing{
 			display:none;
 		}
@@ -295,7 +369,8 @@ button:active {
 			display:block;
 		}
 		#mobile-probetraining {
-			// display:block;
+			display: block;
+			height: 100vh;
 		}
 		#mobile-landing-header {
 			background-color: #252525;
@@ -380,6 +455,16 @@ button:active {
 			white-space: normal;
 			width: fit-content;
 		}
+		
+		#mobile-probe-table-right{
+			left: 0%;
+			width: 100%;
+		}
+		
+		#mobile-probe-join-text{
+			width: 80vw;
+		}
+		
 		
 		#impressum {
 			height: auto;
@@ -493,35 +578,6 @@ button:active {
 				
 				<img src = "images/Logo_Unity_Performance_Vektor.png" style="position: absolute;z-index: 99; left:2%; top: 2%; height:6%;">
 			</div>
-            
-            
-			<div id = "probetraining" style= "height:100%; position:relative;">
-				<div style="position: absolute;left:0%; top:0%;width: 50%;height:100%; z-index: 99; background-color:#f9f7f3;">
-					<div style="position: absolute; width:80%; left:2.5%; top:5%; z-index: 100; font-size:2rem; color:#252525;">Du willst mit uns trainieren?</div>
-					<div style="position: absolute; left:2.5%; top:15%; z-index: 100; font-size:1rem; color:#252525;">
-                    Wir freuen uns immer über neue Kämpfer*innen! <br>
-                    Fülle einfach das Kontaktformular aus und Jasmin <br>
-                    wird sich so schnell wie möglich bei euch melden.
-					</div>
-				</div>
-				<div style="position: absolute;left:50%; top:0%;width: 50%;height:100%; z-index: 99; background-color:#252525;">
-                  <div style="position: absolute; left:20%; top:10%; z-index: 100; font-size:1.5rem; color:#f9f7f3;">Kontaktdaten</div>
-                
-                <form action="send.php" method="post">
-					<div style= "left: 20%;position: absolute;top: 25%;width: 20%;">
-					</div>
-                  <input type="text" name="name" placeholder="Name" required style="left: 20%;position: absolute;top: 25%;width: 20%;color: #252525; background-color:#f9f7f3;">
-                  <input type="email" name="email" placeholder="Email" required style="left: 50%;position: absolute;top: 25%;width: 20%;color: #252525; background-color:#f9f7f3;">
-                  <div style = "width: 25%; height: 20%; left: 20%;position: absolute;top: 35%;">
-					<input type="checkbox" name="checkProbe" value="kaese" id="check1" style="top: 0%;color: #252525; background-color:#f9f7f3;">
-					Hiermit erkläre ich blablabla und das ich bla bla bin mit bla
-                  </div>
-				  <button type="submit" style="position:absolute; left: 50%; top: 45%;width: 40%; font-size:1.5rem;">Absenden</button>
-                </form>
-                </div>
-				
-                <img src = "images/Logo_Unity_Performance_Vektor.png" style="position: absolute; z-index: 99; left:45%; top: 30%; width:10%;">
-            </div>
 			
 			<div id = "mobile-probetraining">
 				<div id = "mobile-probe-top"> </div>
@@ -545,20 +601,25 @@ button:active {
 				</div>
 				<div id = "mobile-probe-bot"> </div>
 				
-				<img src = "images/Logo_Unity_Performance_Vektor.png" style="position: absolute; left:2.5%; top:2.5%; height:6%; ">
+				<img src = "images/Logo_Unity_Performance_Vektor.png" id = "mobile-probe-logo">
 				<div id = "mobile-probe-join">
 					<p id = "mobile-probe-join-head" style ="color:var(--myBlack);">
 					Join Us?
 					</p>
-					<p id = "mobile-probe-join-text" style ="color:var(--myBlack); font-size: 1rem; width: 80vw;">
-					Wir freuen uns immer über neue Kämpfer*innen! <br>
-                    Fülle einfach das Kontaktformular aus und Jasmin <br>
-                    wird sich so schnell wie möglich bei euch melden.
-					</p>
+					
+					<div style = "margin: 0.5rem;">
+						<div id = "mobile-probe-willst">Du willst mit uns trainieren?</div>
+						<p id = "mobile-probe-join-text" style ="color:var(--myBlack); font-size: 1rem;">
+						Wir freuen uns immer über neue Kämpfer*innen! <br>
+						Fülle einfach das Kontaktformular aus und Jasmin <br>
+						wird sich so schnell wie möglich bei euch melden.
+						</p>
+					</div>
 				</div>
-				
-				
 			</div>
+			
+			
+			
             
             <div id = "impressum">
 				<div id = "impressum-grid">
