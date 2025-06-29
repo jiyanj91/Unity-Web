@@ -4,8 +4,13 @@
 - PROBETRAING Form, ids und names sind doppelt. Ist das ein Problem?
 - Datenschutz Text
 
+preis: probetraining zu wenig platz
+preis und landing: probetraining underline weg
 
+landing page link im menü funzt nicht
 
+<div class="g-recaptcha" data-sitekey="DEIN_SITE_KEY"></div>
+<script src="https://www.google.com/recaptcha/api.js" async defer></script>
 
 
 
