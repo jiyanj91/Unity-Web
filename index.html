@@ -14,14 +14,14 @@
 	<body class="is-preload">
 			<div id = "landing">
 				<div class="landing-left" /></div>
-				<div style="position: absolute; left:1.5%; top:2%; z-index: 99; font-size:2rem;"> Unity Performance LOL</div>
+				<div style="position: absolute; left: 1rem; top: 1rem; z-index: 99; font-size:2rem;">Unity Performance</div>
 				<div style="position: absolute; left:5%; top:50%; width:40%; z-index: 99; font-size: 2.5rem;">
-					<p style = "margin-bottom: 0.8rem">Dedicated to exellence</p>
-                    <a href="#mobile-probetraining" style="border-radius:0.0rem;background-color: #d7a13d; color:#f9f7f3;">
+					<p style = "margin-bottom: 1rem">Dedicated to exellence</p>
+                    <a href="#mobile-probetraining" style="border-radius:0.0rem;background-color: #d7a13d; color:#f9f7f3; padding: 0.3rem;">
                     Probetraining
                     </a>
 				</div>
-				<img src = "images/Logo_Unity_Performance_Vektor.png" style="position: absolute;z-index: 99; left:40%; top: 15%; width:20%;">
+				<img src = "images/Logo_Unity_Performance_Vektor.png" style="position: absolute;z-index: 99; left:40%; bottom: 60%; width:20%;">
 				<div class="slider">
 				  <div class="arrow left" onclick="prevImage()">❮</div>
 				  <div class="arrow right" onclick="nextImage()">❯</div>
@@ -29,7 +29,9 @@
 				  <img src="images/pic03.jpg">
 				</div>
                 
-                <div id = "countdown"style="position: absolute; left:60%; top:70%; width:10%; height:10%; z-index: 102;">
+                <div id = "countdown"style="position: absolute; left:60%; top:70%; width:10%; height:10%; z-index: 102;
+				background-image: url('images/oktagon countdown.png');
+				background-size: 100% 100%;">
                 Gym Eröffnung
                 </div>
 			</div>
@@ -47,7 +49,7 @@
 				
 				<p id = "mobile-unity-sub">
 						Your new favorite gym <br>
-						opening 01 August
+						opening 01, of August
 				</p>
 				
 				<div id = "center-wrapper">
@@ -63,7 +65,7 @@
 				</div>
 				
 				
-				<img src = "images/Logo_Unity_Performance_Vektor.png" style="position: absolute;z-index: 99; left:2%; top: 2%; height:6%;">
+				<img src = "images/Logo_Unity_Performance_Vektor.png" style="position: absolute;z-index: 99; left: 1rem; top: 1rem; height:6%;">
 			</div>
 			
 			<div id = "mobile-probetraining">
@@ -94,69 +96,111 @@
 					Join Us?
 					</p>
 					
-					<div style = "margin: 0.5rem;">
-						<div id = "mobile-probe-willst">Du willst mit uns trainieren?</div>
+					<div style = "margin: 2.5rem;">
+						<div id = "mobile-probe-willst">Join us?</div>
 						<p id = "mobile-probe-join-text" style ="color:var(--myBlack); font-size: 1rem;">
 						Wir freuen uns immer über neue Kämpfer*innen! <br>
 						Fülle einfach das Kontaktformular aus und Jasmin <br>
 						wird sich so schnell wie möglich bei euch melden.
+						<br> <br>
+						<a href="mailto:jasmin@unity-performance.de" style="color: var(--myBlack);">&#9993; jasmin@unity-performance.de</a>
 						</p>
 					</div>
 				</div>
+				<img src="images/pic03.jpg" style="position: absolute;left: 50%;top: 0%;width: 50%;height: 100%;">
 			</div>
+			
+			<script>
+			stylesafe = {};
+			clicksafe = {};
+			function membership(param){
+				if(window.innerWidth > 540) return;
+
+				if(document.getElementById(param).children[1].style.getPropertyValue("display") != "block"){
+					style = document.getElementById(param).style;
+					stylesafe[param] = style;
+					clicksafe[param] = document.getElementById(param).getAttribute("onclick");
+					document.getElementById(param).children[1].style.setProperty("display", "block");
+					document.getElementById(param).children[2].style.setProperty("display", "block");
+					style.setProperty("position", "fixed");
+					style.setProperty("top", "20%");
+					style.setProperty("left", "20%");
+					style.setProperty("right", "20%");
+					style.setProperty("height", "60%");
+					style.setProperty("z-index", "90");
+					document.getElementById(param).setAttribute("onclick","");
+				}
+				
+			}
+			
+			function memberClose(param, event){
+				style = document.getElementById(param).style;
+				document.getElementById(param).style = stylesafe[param];
+				document.getElementById(param).children[1].style.setProperty("display", "none");
+				document.getElementById(param).children[2].style.setProperty("display", "none");
+				document.getElementById(param).setAttribute("onclick", clicksafe[param]);
+				event.stopPropagation();
+			}
+			</script>
 			
 			<div id="preise">
 				<div id="preise-up">Unity Performance</div>
 				<div id="preise-memberships">Memberships</div>
 				
-				<div id="preise-einer">
+				<div id="preise-einer" onclick="membership('preise-einer')">
 					<div class = "member-header">
 						1 Kurs
 					</div>
-					<div class = "member-text">
+					<div id="pr-einer" class = "member-text">
 						Kinder bis 13 Jahre <br>
-						<b>49€*</b> <br>
+						<b>49 €*</b> <br>
 						Schüler*in & Studierende <br>
-						<b>69€*</b> <br>
+						<b>69 €*</b> <br>
 						Erwachsene <br>
-						<b>89€*</b>
+						<b>89 €*</b>
 					</div>
+					<div class = "preise-x-button"
+						onclick="memberClose('preise-einer', event)">x</div>
 				</div>
-				<div id="preise-alle">
+				<div id="preise-alle" onclick="membership('preise-alle')">
 					<div class = "member-header">
 						Alle Kurse
 					</div>
-					<div class = "member-text">
+					<div id="pr-alle" class = "member-text">
 						Kinder bis 13 Jahre <br>
-						<b>49€*</b> <br>
+						<b>49 €*</b> <br>
 						Schüler*in, Studierende <br>
 						& Erwachsene <br>
-						<b>89€*</b> <br>
+						<b>89 €*</b> <br>
 						Elite inkl. MMA <br>
-						<b>99€*</b> <br>
+						<b>99 €*</b> <br>
 						PRO-Klasse
 						<b>auf Anfrage</b>
 					</div>
+					<div class = "preise-x-button"
+						onclick="memberClose('preise-alle', event)">x</div>
 				</div>
-				<div id="preise-rabatt">
+				<div id="preise-rabatt" onclick="membership('preise-rabatt')">
 					<div class = "member-header">
 						Ermäßigung
 					</div>
-					<div class = "member-text">
+					<div id="pr-rabatt" class = "member-text">
 						<underline>
 						10 % Rabatt pro Kind <br>
-						<b>ab 105€*</b> <br>
+						<b>ab 105 €*</b> <br>
 						gemeinsames Training <br>
-						<b>ab 120€*</b> <br>
+						<b>ab 120 €*</b> <br>
 						gesamte Familie <br>
-						<b>199€*</b>
+						<b>199 €*</b>
 						</underline>
 					</div>
+					<div class = "preise-x-button"
+						onclick="memberClose('preise-rabatt', event)">x</div>
 				</div>
 				
 				<div id="preise-probe">
 					<a href = "#mobile-probetraining">
-					<div style = "width: 100%;height: 100%;background-color: var(--myYellow);justify-content: center;align-items: center;display: flex;font-size: 1.5rem;">
+					<div style = "width: 100%;background-color: var(--myYellow);justify-content: center;align-items: center;display: flex;font-size: 2rem;">
 						Probetraining
 					</div>
 					</a>
@@ -164,7 +208,10 @@
 				<div id="preise-hinweis" style = "">*alle Preise verstehen sich monatlich</div>
 			</div>
 			
-            
+			<div id="trainingsplan" style= "width:100%;">
+			<img src="images/Trainingsplan.jpg" style="width: 100%; display: block;">
+            </div>
+			
             <div id = "impressum">
 				<div id = "impressum-grid">
 					<p id = "impressum-contact">Contact</p>
@@ -173,14 +220,16 @@
 
 					
 					<p id = "impressum-place">
+					<a href= "https://maps.app.goo.gl/2CoYDWJvG8918SSZA">
 					Unity Performance <br>
-					Alsterufer 12 <br>
-					20354 Hamburg
+					Großmannstraße 129 <br>
+					20539 Hamburg
+					</a>
 					</p>
 					
 					<div id= "impressum-tel">
-						<div id = "impressum-tel-tel">&#128222; 040 37482628</div>
-						<div id = "impressum-tel-mail">&#9993; lala@gmail.com</div>
+						<div id = "impressum-tel-tel">&#128222; Folgt</div>
+						<div id = "impressum-tel-mail"><a href="mailto:jasmin@unity-performance.de">&#9993; jasmin@unity-performance.de</a></div>
 					</div>
 					
 					<div id = "impressum-dedicated">Dedicated to excellence</div>
@@ -191,7 +240,7 @@
 			
 		
 			<div class="hamburger" onclick="toggleMenu()">
-			  <div style= "background-color: var(--myWhite); border-radius:0.1rem;"></div>
+			  <div style= "background-color: var(--myWhite); border-radius:0.1rem; margin-top: 0px;"></div>
 			  <div style= "background-color: var(--myWhite); border-radius:0.1rem;"></div>
 			  <div style= "background-color: var(--myWhite); border-radius:0.1rem;"></div>
 			</div>
@@ -228,7 +277,7 @@
   }
 
   function updateCountdown() {
-    const zielDatum = new Date("2025-07-01T00:00:00"); // dein Ziel-Datum
+    const zielDatum = new Date("2025-08-01T00:00:00"); // dein Ziel-Datum
     const jetzt = new Date();
     const differenz = zielDatum - jetzt;
 
