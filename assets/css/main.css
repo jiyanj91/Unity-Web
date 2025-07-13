@@ -7,6 +7,8 @@
   --myBlack: #252525;
   --myYellow: #d7a13d;
   --myBoxYellow: #ffca00;
+  
+  --mainDiff: 1rem;
 }
 
 	html, body, div, span, applet, object,
@@ -39,7 +41,7 @@
     .hamburger {
       position: fixed;
       top: 20px;
-      right: 20px;
+      right: var(--mainDiff);
       width: 30px;
       height: 25px;
 	  color:white;
@@ -48,7 +50,7 @@
     }
 
     .hamburger div {
-      background-color: #333;
+      background-color: var(--myYellow);
       height: 4px;
       margin: 5px 0;
       transition: 0.4s;
@@ -239,9 +241,10 @@ button:active {
 
 #impressum-dedicated{
 	font-size:2rem;
-	color: var(--myYellow);
+	color: var(--myWhite);
 	grid-column: 3;
 	grid-row: 2;
+	margin-left: 10%;
 }
 
 #impressum-tel-mail{
@@ -428,7 +431,8 @@ button:active {
 		position: absolute;
 		left:2.5%;
 		top:2.5%;
-		height:6%; 
+		height:6%;
+		display: none;
 	}
 	
 	
@@ -460,7 +464,7 @@ button:active {
 		}
 		#mobile-probetraining {
 			display: block;
-			height: 100vh;
+			height: 30vh;
 		}
 		#mobile-landing-header {
 			background-color: #252525;
@@ -527,11 +531,13 @@ button:active {
 			position:relative;
 			background-color: var(--myBlack);
 			height: 40vh;
+			display:none;
 		}
 		
 		#mobile-probe-bot {
 			background-color: var(--myWhite);
 			height: 30vh;
+			display:none;
 		}
 		#mobile-probe-join {
 			font-size: 1.5rem;
@@ -552,6 +558,10 @@ button:active {
 		
 		#mobile-probe-join-text{
 			width: 80vw;
+		}
+		
+		#mobile-probe-rechtes-bild{
+			display:none;
 		}
 		
 		

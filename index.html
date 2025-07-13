@@ -14,9 +14,11 @@
 	<body class="is-preload">
 			<div id = "landing">
 				<div class="landing-left" /></div>
-				<div style="position: absolute; left: 1rem; top: 1rem; z-index: 99; font-size:2rem;">Unity Performance</div>
-				<div style="position: absolute; left:5%; top:50%; width:40%; z-index: 99; font-size: 2.5rem;">
-					<p style = "margin-bottom: 1rem">Dedicated to exellence</p>
+				<div style="position: absolute; left: var(--mainDiff); top: 1rem; z-index: 99; font-size:2rem;">Unity Performance</div>
+				<div style="position: absolute; left:var(--mainDiff); top:50%; width:40%; z-index: 99; font-size: 2.5rem;">
+					rise&nbsp;<b style="color:var(--myWhite);">UP.</b>
+					stay&nbsp;<b style="color:var(--myWhite); font-style: italic;">INVARIANT.</b>
+					<br>
                     <a href="#mobile-probetraining" style="border-radius:0.0rem;background-color: #d7a13d; color:#f9f7f3; padding: 0.3rem;">
                     Probetraining
                     </a>
@@ -29,10 +31,9 @@
 				  <img src="images/pic03.jpg">
 				</div>
                 
-                <div id = "countdown"style="position: absolute; left:60%; top:70%; width:10%; height:10%; z-index: 102;
+                <div id = "countdown"style="position: fixed; left:60%; top:70%; width:10%; height:10%; z-index: 102;
 				background-image: url('images/oktagon countdown.png');
 				background-size: 100% 100%;">
-                Gym Eröffnung
                 </div>
 			</div>
 			
@@ -68,80 +69,9 @@
 				<img src = "images/Logo_Unity_Performance_Vektor.png" style="position: absolute;z-index: 99; left: 1rem; top: 1rem; height:6%;">
 			</div>
 			
-			<div id = "mobile-probetraining">
-				<div id = "mobile-probe-top"> </div>
-				<div id = "mobile-probe-mid">
-					<div id = "mobile-probe-table-right">
-						<p id = "mobile-probe-head">
-						Kontaktdaten
-						</p>
-						
-						<form action="send.php" method="post" style="display: contents;">
-							<input id="f1" type="text" name="name" placeholder="Name" required style="width:60%; color: #252525; background-color:#f9f7f3;">
-							<input id="f2" type="email" name="email" placeholder="Email" required style="color: #252525; background-color:#f9f7f3;">
-							<div id="f3">
-							<input type="checkbox" name="checkProbe" value="kaese" id="check1" style="top: 0%;color: #252525; background-color:#f9f7f3;">
-							Hiermit erkläre ich blablabla und das ich bla bla bin mit bla
-							</div>
-							<button id = "f4" type="submit" style="font-size:1.5rem;">Absenden</button>
-						</form>
-					</div>
-				
-				</div>
-				<div id = "mobile-probe-bot"> </div>
-				
-				<img src = "images/Logo_Unity_Performance_Vektor.png" id = "mobile-probe-logo">
-				<div id = "mobile-probe-join">
-					<p id = "mobile-probe-join-head" style ="color:var(--myBlack);">
-					Join Us?
-					</p>
-					
-					<div style = "margin: 2.5rem;">
-						<div id = "mobile-probe-willst">Join us?</div>
-						<p id = "mobile-probe-join-text" style ="color:var(--myBlack); font-size: 1rem;">
-						Wir freuen uns immer über neue Kämpfer*innen! <br>
-						Fülle einfach das Kontaktformular aus und Jasmin <br>
-						wird sich so schnell wie möglich bei euch melden.
-						<br> <br>
-						<a href="mailto:jasmin@unity-performance.de" style="color: var(--myBlack);">&#9993; jasmin@unity-performance.de</a>
-						</p>
-					</div>
-				</div>
-				<img src="images/pic03.jpg" style="position: absolute;left: 50%;top: 0%;width: 50%;height: 100%;">
-			</div>
-			
-			<script>
-			stylesafe = {};
-			clicksafe = {};
-			function membership(param){
-				if(window.innerWidth > 540) return;
-
-				if(document.getElementById(param).children[1].style.getPropertyValue("display") != "block"){
-					style = document.getElementById(param).style;
-					stylesafe[param] = style;
-					clicksafe[param] = document.getElementById(param).getAttribute("onclick");
-					document.getElementById(param).children[1].style.setProperty("display", "block");
-					document.getElementById(param).children[2].style.setProperty("display", "block");
-					style.setProperty("position", "fixed");
-					style.setProperty("top", "20%");
-					style.setProperty("left", "20%");
-					style.setProperty("right", "20%");
-					style.setProperty("height", "60%");
-					style.setProperty("z-index", "90");
-					document.getElementById(param).setAttribute("onclick","");
-				}
-				
-			}
-			
-			function memberClose(param, event){
-				style = document.getElementById(param).style;
-				document.getElementById(param).style = stylesafe[param];
-				document.getElementById(param).children[1].style.setProperty("display", "none");
-				document.getElementById(param).children[2].style.setProperty("display", "none");
-				document.getElementById(param).setAttribute("onclick", clicksafe[param]);
-				event.stopPropagation();
-			}
-			</script>
+			<div id="trainingsplan" style= "width:100%;">
+			<img src="images/Trainingsplan.jpg" style="width: 100%; display: block;">
+            </div>
 			
 			<div id="preise">
 				<div id="preise-up">Unity Performance</div>
@@ -208,9 +138,81 @@
 				<div id="preise-hinweis" style = "">*alle Preise verstehen sich monatlich</div>
 			</div>
 			
-			<div id="trainingsplan" style= "width:100%;">
-			<img src="images/Trainingsplan.jpg" style="width: 100%; display: block;">
-            </div>
+			
+			<div id = "mobile-probetraining">
+				<div id = "mobile-probe-top"> </div>
+				<div id = "mobile-probe-mid">
+					<div id = "mobile-probe-table-right">
+						<p id = "mobile-probe-head">
+						Kontaktdaten
+						</p>
+						
+						<form action="send.php" method="post" style="display: contents;">
+							<input id="f1" type="text" name="name" placeholder="Name" required style="width:60%; color: #252525; background-color:#f9f7f3;">
+							<input id="f2" type="email" name="email" placeholder="Email" required style="color: #252525; background-color:#f9f7f3;">
+							<div id="f3">
+							<input type="checkbox" name="checkProbe" value="kaese" id="check1" style="top: 0%;color: #252525; background-color:#f9f7f3;">
+							Hiermit erkläre ich blablabla und das ich bla bla bin mit bla
+							</div>
+							<button id = "f4" type="submit" style="font-size:1.5rem;">Absenden</button>
+						</form>
+					</div>
+				
+				</div>
+				<div id = "mobile-probe-bot"> </div>
+				
+				<img src = "images/Logo_Unity_Performance_Vektor.png" id = "mobile-probe-logo">
+				<div id = "mobile-probe-join">
+					<p id = "mobile-probe-join-head" style ="color:var(--myBlack);">
+					Join Us?
+					</p>
+					
+					<div style = "margin: 2.5rem;">
+						<div id = "mobile-probe-willst">Join us?</div>
+						<p id = "mobile-probe-join-text" style ="color:var(--myBlack); font-size: 1rem;">
+						Wir freuen uns immer über neue Kämpfer*innen! <br>
+						Fülle einfach das Kontaktformular aus und Jasmin <br>
+						wird sich so schnell wie möglich bei euch melden.
+						<br> <br>
+						<a href="mailto:jasmin@unity-performance.de" style="color: var(--myBlack);">&#9993; jasmin@unity-performance.de</a>
+						</p>
+					</div>
+				</div>
+				<img src="images/pic03.jpg" id= "mobile-probe-rechtes-bild" style="position: absolute;left: 50%;top: 0%;width: 50%;height: 100%;">
+			</div>
+			
+			<script>
+			stylesafe = {};
+			clicksafe = {};
+			function membership(param){
+				if(window.innerWidth > 540) return;
+
+				if(document.getElementById(param).children[1].style.getPropertyValue("display") != "block"){
+					style = document.getElementById(param).style;
+					stylesafe[param] = style;
+					clicksafe[param] = document.getElementById(param).getAttribute("onclick");
+					document.getElementById(param).children[1].style.setProperty("display", "block");
+					document.getElementById(param).children[2].style.setProperty("display", "block");
+					style.setProperty("position", "fixed");
+					style.setProperty("top", "20%");
+					style.setProperty("left", "20%");
+					style.setProperty("right", "20%");
+					style.setProperty("height", "60%");
+					style.setProperty("z-index", "90");
+					document.getElementById(param).setAttribute("onclick","");
+				}
+				
+			}
+			
+			function memberClose(param, event){
+				style = document.getElementById(param).style;
+				document.getElementById(param).style = stylesafe[param];
+				document.getElementById(param).children[1].style.setProperty("display", "none");
+				document.getElementById(param).children[2].style.setProperty("display", "none");
+				document.getElementById(param).setAttribute("onclick", clicksafe[param]);
+				event.stopPropagation();
+			}
+			</script>
 			
             <div id = "impressum">
 				<div id = "impressum-grid">
@@ -232,17 +234,17 @@
 						<div id = "impressum-tel-mail"><a href="mailto:jasmin@unity-performance.de">&#9993; jasmin@unity-performance.de</a></div>
 					</div>
 					
-					<div id = "impressum-dedicated">Dedicated to excellence</div>
-					<div id = "impressum-imprint">Imprint</div>
+					<div id = "impressum-dedicated">Dedicated to <br> <div style="color:var(--myYellow);">excellence</div></div>
+					<div id = "impressum-imprint">Impressum</div>
 				</div>
             </div>
 			
 			
 		
 			<div class="hamburger" onclick="toggleMenu()">
-			  <div style= "background-color: var(--myWhite); border-radius:0.1rem; margin-top: 0px;"></div>
-			  <div style= "background-color: var(--myWhite); border-radius:0.1rem;"></div>
-			  <div style= "background-color: var(--myWhite); border-radius:0.1rem;"></div>
+			  <div style= "border-radius:0.1rem; margin-top: 0px;"></div>
+			  <div style= "border-radius:0.1rem;"></div>
+			  <div style= "border-radius:0.1rem;"></div>
 			</div>
 			
 			<div class="side-menu" id="sideMenu">
@@ -282,7 +284,7 @@
     const differenz = zielDatum - jetzt;
 
     if (differenz <= 0) {
-      document.getElementById("countdown").innerText = "Gym ist eröffnet!";
+      //document.getElementById("countdown").innerText = "Gym ist eröffnet!";
       return;
     }
 
@@ -291,8 +293,7 @@
     const minuten = Math.floor((differenz / (1000 * 60)) % 60);
     const sekunden = Math.floor((differenz / 1000) % 60);
 
-    document.getElementById("countdown").innerText =
-      `Gym opening in ${tage} Days`;
+    //document.getElementById("countdown").innerText = `Gym opening in ${tage} Days`;
   }
 
   updateCountdown(); // Initial aufrufen

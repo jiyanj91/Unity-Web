@@ -12,7 +12,10 @@ landing page link im menü funzt nicht
 <div class="g-recaptcha" data-sitekey="DEIN_SITE_KEY"></div>
 <script src="https://www.google.com/recaptcha/api.js" async defer></script>
 
-
+-menü
+-coaches
+-fighter
+-sauber machen
 
 
 Datenschutzerklärung & Einwilligung
