@@ -232,12 +232,14 @@ button:active {
 	grid-column: 3;
 	grid-row: 2;
 	margin-left: 5vw;
+	line-height: 2.0;
 }
 
 #impressum-tel{
 	grid-column: 1;
 	grid-row: 2;
 	margin-left:  var(--mainDiff);
+	line-height: 2.0;
 }
 
 #impressum-dedicated{
@@ -249,11 +251,6 @@ button:active {
 	width: max-content;
 	margin-left: auto;
 	margin-right: auto;
-}
-
-#impressum-tel-mail{
-	position: relative;
-	top: 1.5rem;
 }
 
 #impressum-imprint{
@@ -345,7 +342,7 @@ button:active {
 #preise {
 	width: 100%;
 	background-color: var(--myBlack);
-	grid-template-columns: 3fr 0fr 0fr 5fr 25fr 5fr 25fr 5fr 10fr 15fr 5fr 5fr 5fr;
+	grid-template-columns: 3fr 0fr 0fr 5fr 25fr 5fr 25fr 5fr 10fr 15fr 5fr 3fr 0fr;
 	grid-template-rows: 1.5rem 2rem 1rem 4rem 0rem auto 1.5rem 3rem 0rem 4rem 0rem 0rem;
 	display: grid;
 }
@@ -384,12 +381,18 @@ button:active {
 	color: var(--myBlack);
 	position: absolute;
 	top: 0%;
-	right: 0.5%;
+	right: 2.0%;
 }
 
 .side-menu a.menu-mobile {
 	display: none;
 }
+
+.icon-x {
+  color: var(--myBlack);
+  font-size: 1.5rem;
+}
+
 	
 @media screen and (max-width: 540px) {
 	#preise{
@@ -599,12 +602,14 @@ button:active {
 		#impressum-tel{
 			grid-column: 1;
 			grid-row: 2;
+			line-height: initial;
 		}
 		
 		#impressum-place{
 			grid-column: 1;
 			grid-row: 3;
 			margin: 0%;
+			line-height: initial;
 		}
 		
 		#impressum-dedicated{
@@ -621,9 +626,6 @@ button:active {
 			display:block;
 			grid-column: 1;
 			grid-row: 6;
-		}
-		#impressum-tel-mail{
-			top: initial;
 		}
 		
 		

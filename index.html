@@ -10,6 +10,7 @@
 		<meta charset="utf-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
 		<link rel="stylesheet" href="assets/css/main.css" />
+		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 	</head>
 	<body class="is-preload">
 			<div id = "landing">
@@ -90,7 +91,7 @@
 						<b>89 €</b>
 					</div>
 					<div class = "preise-x-button"
-						onclick="memberClose('preise-einer', event)">x</div>
+						onclick="memberClose('preise-einer', event)"><i class="fas fa-xmark icon-x"></i></div>
 				</div>
 				<div id="preise-alle" onclick="membership('preise-alle')">
 					<div class = "member-header">
@@ -108,7 +109,7 @@
 						<b>auf Anfrage</b>
 					</div>
 					<div class = "preise-x-button"
-						onclick="memberClose('preise-alle', event)">x</div>
+						onclick="memberClose('preise-alle', event)"><i class="fas fa-xmark icon-x"></i></div>
 				</div>
 				<div id="preise-rabatt" onclick="membership('preise-rabatt')">
 					<div class = "member-header">
@@ -125,7 +126,7 @@
 						</underline>
 					</div>
 					<div class = "preise-x-button"
-						onclick="memberClose('preise-rabatt', event)">x</div>
+						onclick="memberClose('preise-rabatt', event)"><i class="fas fa-xmark icon-x"></i></div>
 				</div>
 				
 				<div id="preise-probe">
@@ -189,6 +190,7 @@
 
 				if(document.getElementById(param).children[1].style.getPropertyValue("display") != "block"){
 					style = document.getElementById(param).style;
+					styleX = document.getElementById(param).style;
 					stylesafe[param] = style;
 					clicksafe[param] = document.getElementById(param).getAttribute("onclick");
 					document.getElementById(param).children[1].style.setProperty("display", "block");
@@ -199,6 +201,14 @@
 					style.setProperty("right", "20%");
 					style.setProperty("height", "60%");
 					style.setProperty("z-index", "90");
+					style.setProperty("border-width", "0.5rem");
+					style.setProperty("border-style", "solid");
+					style.setProperty("border-color", "var(--myYellow)");
+					
+					styleX.setProperty("color", "var(--myBlack)");
+					styleX.setProperty("font-size", "2rem");
+					
+					
 					document.getElementById(param).setAttribute("onclick","");
 				}
 				
@@ -230,11 +240,12 @@
 					</p>
 					
 					<div id= "impressum-tel">
-						<div id = "impressum-tel-tel">Management <a href="mailto:jasmin@unity-performance.de">&#9993; jasmin@unity-performance.de</a></div>
-						<div id = "impressum-tel-mail">Head Coach <a href="mailto:jasmin@unity-performance.de">&#9993; jasmin@unity-performance.de</a></div>
+						<div id = "impressum-tel-tel"><a href="mailto:jasmin@unity-performance.de"><i class="fas fa-envelope"></i> Management jasmin@unity-performance.de</a></div>
+						<div id = "impressum-tel-insta"><a href="https://www.instagram.com/unity_performance_gmbh"><i class="fab fa-instagram"></i> @unity_performance_gmbh</div></a>
+						<div id = "impressum-tel-mail"><a href="mailto:sandaqo@unity-performance.de"><i class="fas fa-envelope"></i> Head Coach sandaqo@unity-performance.de</a></div>
 					</div>
 					
-					<div id = "impressum-dedicated">DEDICATED TO<br> <div style="color:var(--myYellow); font-size:2.2rem;">EXCELLENCE</div></div>
+					<div id = "impressum-dedicated">DEDICATED TO<br> <div style="color:var(--myYellow); font-size:2.55rem;">EXCELLENCE</div></div>
 					<div id = "impressum-imprint">Impressum</div>
 				</div>
             </div>
