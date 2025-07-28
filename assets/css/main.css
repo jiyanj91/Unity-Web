@@ -401,7 +401,7 @@ button:active {
 	#preise{
 		height: initial;
 		grid-template-columns: 5% 90% 5%;
-		grid-template-rows: 5vh 5vh auto 0vh 1vh auto 0vh 1vh auto 10vh;
+		grid-template-rows: 5vh 7vh auto 0vh 1vh auto 0vh 1vh auto 10vh;
 		height: initial;
 	}
 	

@@ -6,7 +6,7 @@
 -->
 <html>
 	<head>
-		<title>Unity Performance LOL</title>
+		<title>Unity Performance</title>
 		<meta charset="utf-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
 		<link rel="stylesheet" href="assets/css/main.css" />
@@ -58,23 +58,14 @@
 				</p>
 				
 				<div id = "center-wrapper">
-					
-					<p id = "mobile-unity-team">
-						Das Team
-					</p>
-					<p id = "mobile-unity-team2">
-						Wir sind ein Team aus Kämpferherzen. Jeder mit seiner eigenen Geschichte.
-						Manche von uns stehen seit sie Laufen können auf den Matten andere haben gerade mal
-						vor ein paar Jahren angefangen.
-					</p>
 				</div>
 				
 				
-				<img src = "images/Logo_Unity_Performance_Vektor.png" style="position: absolute;z-index: 99; left: 1rem; top: 1rem; height:6%;">
+				
 			</div>
 			
 			<div id="trainingsplan" style= "width:100%;">
-			<img src="images/Trainingsplan.jpg" style="width: 100%; display: block;">
+			<img src="images/Trainingsplan.bmp" style="width: 100%; display: block;">
             </div>
 			
 			<div id="preise">
@@ -173,7 +164,7 @@
 					Join Us?
 					</p>
 					
-					<div style = "margin: 2.5rem;">
+					<div style = "margin: 2.5rem; margin-top:6.5rem;">
 						<div id = "mobile-probe-willst">Join us?</div>
 						<p id = "mobile-probe-join-text" style ="color:var(--myBlack); font-size: 1rem;">
 						Wir freuen uns immer über neue Kämpfer! <br>
@@ -244,9 +235,8 @@
 					</p>
 					
 					<div id= "impressum-tel">
-						<div id = "impressum-tel-tel"><a href="mailto:jasmin@unity-performance.de">Management <br> <i class="fas fa-envelope"></i> jasmin@unity-performance.de</a> <br> <br></div>
+						<div id = "impressum-tel-tel"><a href="mailto:Crew@unity-performance.de">Management <br> <i class="fas fa-envelope"></i> Crew@unity-performance.de</a> <br> <br></div>
 						<div id = "impressum-tel-insta"><a href="https://www.instagram.com/unity_performance_gmbh"><i class="fab fa-instagram"></i> unity_performance_gmbh</div> </a> <br>
-						<div id = "impressum-tel-mail">Head Coach <a href="mailto:sandaqo@unity-performance.de"> <br> <i class="fas fa-envelope"></i> sandaqo@unity-performance.de</a></div>
 					</div>
 					
 					<div id = "impressum-dedicated">DEDICATED TO<br> <div style="color:var(--myYellow); font-size:2.55rem;">EXCELLENCE</div></div>
@@ -256,7 +246,7 @@
 			
 			
 		
-			<div class="hamburger" onclick="toggleMenu()">
+			<div id="hamburger" class="hamburger" onclick="">
 			  <div style= "border-radius:0.1rem; margin-top: 0px;"></div>
 			  <div style= "border-radius:0.1rem;"></div>
 			  <div style= "border-radius:0.1rem;"></div>
@@ -313,6 +303,26 @@
 
   updateCountdown(); // Initial aufrufen
   setInterval(updateCountdown, 1000); // Jede Sekunde aktualisieren
+  
+  
+  const burger = document.getElementById("hamburger");
+const menu = document.getElementById("sideMenu");
+
+burger.addEventListener("click", (e) => {
+  document.getElementById("sideMenu").classList.toggle("open");
+  e.stopPropagation(); // verhindert, dass der Klick auf den Button als "außerhalb" gilt
+});
+
+document.addEventListener("click", (e) => {
+  if (!menu.contains(e.target)) {
+    if(document.getElementById("sideMenu").classList.contains("open"))document.getElementById("sideMenu").classList.toggle("open")
+  }
+});
+
+// Optional: Auch Klicks *im* Menü nicht als "außerhalb" werten
+menu.addEventListener("click", (e) => {
+  e.stopPropagation();
+});
 </script>
 
 		<!-- Scripts -->
