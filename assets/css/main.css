@@ -9,6 +9,7 @@
   --myBoxYellow: #ffca00;
   
   --mainDiff: 1rem;
+  --probeSize: 13rem;
 }
 
 	html, body, div, span, applet, object,
@@ -104,7 +105,6 @@
     .slider img {
       width: 100%;
       height: 100%;
-      object-fit: cover;
       display: none;
     }
 
@@ -198,10 +198,6 @@ button:active {
   box-shadow: 0 2px 3px rgba(0, 0, 0, 0.3); /* flacherer Schatten */
 }
 
-#impressum-contact{
-	display:none;
-}
-
 #impressum {
 	background-color: var(--myBlack);
 	height:40%;
@@ -225,7 +221,15 @@ button:active {
 	grid-row: 1;
 	margin-left: var(--mainDiff);
 	margin-top: 2.5vh;
-	
+	display: none;
+}
+
+#impressum-contact{
+	font-size: 2rem;
+	grid-column: 1/3;
+	grid-row: 1;
+	margin-left: var(--mainDiff);
+	margin-top: 2.5vh;
 }
 
 #impressum-place{
@@ -257,7 +261,13 @@ button:active {
 }
 
 #impressum-imprint{
-	display: none;
+	font-size: 2rem;
+	grid-column: 3;
+	grid-row: 1;
+	margin-right: var(--mainDiff);
+	margin-top: 2.5vh;
+	text-align: right;
+	
 }
 
 #mobile-probe-willst{
@@ -283,8 +293,8 @@ button:active {
 
 #mobile-probe-logo{
 	position: absolute;
-	left: 45%;
-	top: 30%;
+	left: 45.15%;
+	top: 37.5%;
 	width: 10%;
 	z-index: 99;
 }
@@ -316,6 +326,7 @@ button:active {
 
 #mobile-probetraining {
 	display:block;
+	display: flex;
 }
 
 #mobile-probe-mid {
@@ -331,11 +342,14 @@ button:active {
 
 #mobile-probe-join{
 	position: absolute;
-	left: 0%;
+	left: 2.5%;
 	top: 0%;
-	width: 50%;
-	height: 40vh;
+	width: 40%;
+	height: 100%;
 	background-color: var(--myWhite);
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
 }
 
 #mobile-probe-join-head{
@@ -346,7 +360,7 @@ button:active {
 	width: 100%;
 	background-color: var(--myBlack);
 	grid-template-columns: 3fr 0fr 0fr 5fr 25fr 5fr 25fr 5fr 10fr 15fr 5fr 3fr 0fr;
-	grid-template-rows: 1.5rem 2rem 1rem 4rem 0rem auto 1.5rem 3rem 0rem 4rem 0rem 0rem;
+	grid-template-rows: 0rem 0rem 2rem 6rem 0rem auto 1rem 3rem 0rem 4rem 0rem 0rem;
 	display: grid;
 }
 
@@ -398,6 +412,15 @@ button:active {
 
 	
 @media screen and (max-width: 540px) {
+	
+	#impressum-imprint{
+		display: none;
+	}
+	
+	#impressum-contact{
+		display: none;
+	}
+	
 	#preise{
 		height: initial;
 		grid-template-columns: 5% 90% 5%;
@@ -475,14 +498,14 @@ button:active {
 		}
 		#mobile-probetraining {
 			display: block;
-			height: 30vh;
+			height: 30rem;
 		}
 		#mobile-landing-header {
 			background-color: #252525;
 			height: 30vh;
 		}
 		#mobile-landing-img{
-			height: 40vh;
+			height: 70vh;
 			width: 100%;
 		}
 		#mobile-landing-team{
@@ -553,7 +576,7 @@ button:active {
 		#mobile-probe-join {
 			font-size: 1.5rem;
 			position: absolute;
-			top: 20%;
+			top: 50%;
 			left: 50%;
 			transform: translate(-50%, -50%);
 			color: var(--myBlack);	
@@ -588,19 +611,12 @@ button:active {
 			place-items: center;
 		}
 		
-		#impressum-contact{
-			display:block;
-			font-size: 1.5rem;
-			//top: 20%;
-			//left: 50%;
-			//transform: translate(-50%, -50%);
-			color: var(--myWhite);
-			text-align: center;
-			white-space: normal;
-			width: fit-content;
+		#impressum-head{
+			display: grid;
 			grid-column: 1;
 			grid-row: 1;
 		}
+		
 		
 		#impressum-tel{
 			grid-column: 1;
@@ -624,15 +640,8 @@ button:active {
 			grid-row: 4;
 		}
 		
-		#impressum-head{
-			display: none;
-		}
-
-		#impressum-imprint{
-			font-size: 2rem;
-			display:block;
-			grid-column: 1;
-			grid-row: 1;
+		#mobile-probe-inner {
+			display: flex;
 		}
 		
 		
