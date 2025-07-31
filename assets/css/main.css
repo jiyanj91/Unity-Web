@@ -495,6 +495,7 @@ button:active {
 		}
 		#mobile-landing {
 			display:block;
+			height: 100%;
 		}
 		#mobile-probetraining {
 			display: block;
@@ -502,10 +503,10 @@ button:active {
 		}
 		#mobile-landing-header {
 			background-color: #252525;
-			height: 30vh;
+			height: 30%;
 		}
 		#mobile-landing-img{
-			height: 70vh;
+			height: 70%;
 			width: 100%;
 		}
 		#mobile-landing-team{
