@@ -35,6 +35,11 @@
 		font-size: clamp(14px, 1.2vw, 18px);
 		height: 100%;
 	}
+	
+	img{
+		object-fit: cover;
+		filter: grayscale(100%);
+	}
 
 
 
@@ -148,6 +153,7 @@
 		height: 40vh;
 		display:none;
 		position: relative;
+		background-color: var(--myWhite);
 	}
 	
 .member-header{
